@@ -58,6 +58,7 @@
     <Compile Include="CharacterDetail.cs" />
     <Compile Include="CharEdit.cs" />
     <Compile Include="CharListItem.cs" />
+    <Compile Include="GameListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

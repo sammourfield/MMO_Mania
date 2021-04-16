@@ -4,20 +4,20 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
-
+<h2>Your Characters</h2>
+<container class="YourCharacters">
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Add New Character", "Create")
 </p>
 @if (TempData.ContainsKey("SaveResult"))
-{ 
-<div class="alert alert-success fade in" role="alert">
+{
+    <div class="alert alert-success fade in" role="alert">
 
-    <button type="button" class="close" data-dismiss="alert">
-        <span>&times;</span>
-    </button>
-    @TempData["SaveResult"]
-</div>
+        <button type="button" class="close" data-dismiss="alert">
+            <span>&times;</span>
+        </button>
+        @TempData["SaveResult"]
+    </div>
 }
 <table class="table">
     <tr>
@@ -25,7 +25,7 @@
             @Html.DisplayNameFor(model => model.Char_Id)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Game)
+            @Html.DisplayNameFor(model => model.GameTitle)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Char_Name)
@@ -44,32 +44,33 @@
 
     @foreach (var item in Model)
     {
-<tr>
-    <td>
-        @Html.DisplayFor(modelItem => item.Char_Id)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Game)
-    </td>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Char_Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GameTitle)
+            </td>
 
-    <td>
-        @Html.DisplayFor(modelItem => item.Char_Name)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Level)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Achievements)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.CreatedUtc)
-    </td>
-    <td>
-        @Html.ActionLink("Edit", "Edit", new { id = item.Char_Id }) |
-        @Html.ActionLink("Details", "Details", new { id = item.Char_Id }) |
-        @Html.ActionLink("Delete", "Delete", new { id = item.Char_Id })
-    </td>
-</tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Char_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Level)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Achievements)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedUtc)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Char_Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Char_Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Char_Id })
+            </td>
+        </tr>
     }
 
 </table>
+</container>

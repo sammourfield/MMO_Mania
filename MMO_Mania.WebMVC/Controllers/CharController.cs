@@ -65,6 +65,7 @@ namespace MMO_Mania.WebMVC.Controllers
                 new CharEdit
                 {
                     Char_Id = detail.Char_Id,
+                    GameTitle = detail.GameTitle,
                     Char_Name = detail.Char_Name,
                     Level = detail.Level,
                     Achievements = detail.Achievements

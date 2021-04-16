@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Character.cs" />
+    <Compile Include="Games.cs" />
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Migrations\202104132014115_InitialCreate.cs" />
     <Compile Include="Migrations\202104132014115_InitialCreate.Designer.cs">
@@ -67,6 +68,10 @@
     <Compile Include="Migrations\202104132226508_charchanges.cs" />
     <Compile Include="Migrations\202104132226508_charchanges.Designer.cs">
       <DependentUpon>202104132226508_charchanges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104152031010_CharacterUpdate.cs" />
+    <Compile Include="Migrations\202104152031010_CharacterUpdate.Designer.cs">
+      <DependentUpon>202104152031010_CharacterUpdate.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -85,6 +90,15 @@
     <EmbeddedResource Include="Migrations\202104132226508_charchanges.resx">
       <DependentUpon>202104132226508_charchanges.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104152031010_CharacterUpdate.resx">
+      <DependentUpon>202104152031010_CharacterUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MMO_Mania.Models\MMO_Mania.Models.csproj">
+      <Project>{92EA4179-CE92-4263-BEBC-D9097B09AD7F}</Project>
+      <Name>MMO_Mania.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

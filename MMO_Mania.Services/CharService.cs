@@ -22,7 +22,7 @@ namespace MMO_Mania.Services
                 new Character()
                 {
                     OwnerID = _userId,
-                    Game = model.Game,
+                    GameTitle = (Data.Game)model.GameTitle,
                     Char_Name = model.Char_Name,
                     Level = model.Level,
                     Achievements = model.Achievements,
@@ -48,7 +48,7 @@ namespace MMO_Mania.Services
                                 new CharListItem
                                 {
 
-                                    Game = e.Game,
+                                    GameTitle = (Models.Game)e.GameTitle,
                                     Char_Id = e.Char_Id,
                                     Char_Name = e.Char_Name,
                                     Level = e.Level,
@@ -71,7 +71,7 @@ namespace MMO_Mania.Services
                 return
                     new CharacterDetail
                     {
-                        Game = entity.Game,
+                        GameTitle = (Models.Game)entity.GameTitle,
                         Char_Id = entity.Char_Id,
                         Char_Name = entity.Char_Name,
                         Level = entity.Level,
@@ -91,6 +91,7 @@ namespace MMO_Mania.Services
                         .Single(e => e.Char_Id == model.Char_Id && e.OwnerID == _userId);
 
                 entity.Char_Name = model.Char_Name;
+                entity.GameTitle = (Data.Game?)model.GameTitle;
                 entity.Level = model.Level;
                 entity.Achievements = model.Achievements;
                 entity.ModifiedUtc = DateTimeOffset.UtcNow;

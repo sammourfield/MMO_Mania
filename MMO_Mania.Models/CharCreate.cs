@@ -17,7 +17,7 @@ namespace MMO_Mania.Models
         //    ElderScrolls
         //}
         [Required]
-        public string Game { get; set; }
+        public Game? GameTitle{ get; set; }
         [Required]
         
         [MinLength(2, ErrorMessage = "Please enter at least 2 characters.")]
@@ -26,5 +26,11 @@ namespace MMO_Mania.Models
         public int Level { get; set; }
         [MaxLength(2000)]
         public string Achievements { get; set; }
+    }
+    public enum Game
+    {
+        WorldOfWarcraft = 1,
+        RuneScape,
+        ElderScrolls
     }
 }
