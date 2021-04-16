@@ -148,7 +148,7 @@ footer {
     
 }
 h2{
-    background-color:wheat;
+    color:white;
     display:inline-block;
 }
 .YourCharacters{
@@ -157,4 +157,12 @@ h2{
 a{
     background-color:wheat;
     color:blue;
+}
+h4{
+    color:white;
+}
+.form-horizontal{
+    color:wheat;
+    
+
 }
