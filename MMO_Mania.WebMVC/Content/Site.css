@@ -15,6 +15,10 @@
 */
 .dl-horizontal dt {
     white-space: normal;
+    
+}
+dd{
+    color:white;
 }
 
 /* Set width on the form input elements since they're 100% wide by default */
@@ -99,6 +103,7 @@ footer {
     height: 100%;
     -webkit-backface-visibility: hidden; 
     backface-visibility: hidden;
+    
 }
 
 
@@ -111,7 +116,7 @@ footer {
 
 .flip-card-back {
     
-    background-color: cadetblue;
+    background-color: wheat;
     color: black;
     transform: rotateY(180deg);
     padding-bottom:350px;
@@ -159,10 +164,29 @@ a{
     color:blue;
 }
 h4{
-    color:white;
+    color:Black;
 }
 .form-horizontal{
-    color:wheat;
+    color:black;
+    background-color:wheat;
+    display:block;
     
 
 }
+dt{
+    color:white;
+}
+ a{
+    color:red;
+}
+ h3{
+     color:Black;
+ }
+ p{
+     color:black;
+     background-color:wheat;
+     display:inline-block;
+     border:thick;
+     border-color:lightgrey;
+
+ }

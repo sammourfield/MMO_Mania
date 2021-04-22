@@ -9,7 +9,7 @@
 
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar navbar-inverse navbar-fixed-top text-primary">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -17,16 +17,16 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "navbar-brand", style = "color: black" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Games", "Index", "Games")</li>
+                    <li>@Html.ActionLink("Games", "Index", "Games", new { area = "" }, new { @class = "navbar-brand", style = "color: black" })</li>
                     @if (User.Identity.IsAuthenticated)
                     {
-                        <li>@Html.ActionLink("Your Characters", "Index", "Char")</li>
+                        <li>@Html.ActionLink("Your Characters", "Index", "Char", new { area = "" }, new { @class = "navbar-brand", style = "color: black" })</li>
                     }
-                    <li>@Html.ActionLink("Leaderboard", "About", "Home")</li>
+                    <li>@Html.ActionLink("Leaderboard", "About", "Home", new { area = "" }, new { @class = "navbar-brand", style = "color: black" })</li>
                     
                 </ul>
                 @Html.Partial("_LoginPartial")
@@ -37,7 +37,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - MMO Mania Created by Sam Mourfield circa 2021</p>
+            <p>&copy; @DateTime.Now.Year - MMO Mania Created by Sam Mourfield</p>
         </footer>
     </div>
 
