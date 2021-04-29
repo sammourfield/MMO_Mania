@@ -57,6 +57,7 @@
     <Compile Include="Character.cs" />
     <Compile Include="Games.cs" />
     <Compile Include="IdentityModels.cs" />
+    <Compile Include="Leaderboard.cs" />
     <Compile Include="Migrations\202104132014115_InitialCreate.cs" />
     <Compile Include="Migrations\202104132014115_InitialCreate.Designer.cs">
       <DependentUpon>202104132014115_InitialCreate.cs</DependentUpon>

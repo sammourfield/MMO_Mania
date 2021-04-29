@@ -29,7 +29,7 @@ textarea {
 }
 h1 {
     font-family: times, Times New Roman, times-roman, georgia, serif;
-    color: cadetblue;
+    
     margin: 0;
     padding: 1px 0px 6px 0px;
     font-size: 60px;
@@ -177,7 +177,7 @@ dt{
     color:white;
 }
  a{
-    color:red;
+    color:blue;
 }
  h3{
      color:Black;
@@ -189,4 +189,7 @@ dt{
      border:thick;
      border-color:lightgrey;
 
+ }
+ h5{
+     color:white;
  }

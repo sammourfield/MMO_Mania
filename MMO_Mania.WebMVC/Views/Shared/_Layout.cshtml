@@ -21,7 +21,7 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Games", "Index", "Games", new { area = "" }, new { @class = "navbar-brand", style = "color: black" })</li>
+                    <li>@Html.ActionLink("Games", "Index", "Game", new { area = "" }, new { @class = "navbar-brand", style = "color: black" })</li>
                     @if (User.Identity.IsAuthenticated)
                     {
                         <li>@Html.ActionLink("Your Characters", "Index", "Char", new { area = "" }, new { @class = "navbar-brand", style = "color: black" })</li>
