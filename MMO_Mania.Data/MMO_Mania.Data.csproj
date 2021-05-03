@@ -54,10 +54,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Achievements.cs" />
     <Compile Include="Character.cs" />
     <Compile Include="Games.cs" />
     <Compile Include="IdentityModels.cs" />
-    <Compile Include="Leaderboard.cs" />
     <Compile Include="Migrations\202104132014115_InitialCreate.cs" />
     <Compile Include="Migrations\202104132014115_InitialCreate.Designer.cs">
       <DependentUpon>202104132014115_InitialCreate.cs</DependentUpon>
@@ -73,6 +73,14 @@
     <Compile Include="Migrations\202104152031010_CharacterUpdate.cs" />
     <Compile Include="Migrations\202104152031010_CharacterUpdate.Designer.cs">
       <DependentUpon>202104152031010_CharacterUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104292319578_leaderboard.cs" />
+    <Compile Include="Migrations\202104292319578_leaderboard.Designer.cs">
+      <DependentUpon>202104292319578_leaderboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104292359088_leaderboard2.cs" />
+    <Compile Include="Migrations\202104292359088_leaderboard2.Designer.cs">
+      <DependentUpon>202104292359088_leaderboard2.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -93,6 +101,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202104152031010_CharacterUpdate.resx">
       <DependentUpon>202104152031010_CharacterUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104292319578_leaderboard.resx">
+      <DependentUpon>202104292319578_leaderboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104292359088_leaderboard2.resx">
+      <DependentUpon>202104292359088_leaderboard2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

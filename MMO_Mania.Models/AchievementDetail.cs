@@ -7,17 +7,19 @@ using System.Threading.Tasks;
 
 namespace MMO_Mania.Models
 {
-    public class CharacterDetail
+     public class AchievementDetail
     {
-        public int Char_Id { get; set; }
-        public  Game? GameTitle { get; set; }
+        public int AchievementID { get; set; }
+        public Game? GameTitle { get; set; }
+        
+       
         public string Char_Name { get; set; }
-        public int Level { get; set; }
-        public string Achievements { get; set; }
+        
+        public string Achievement { get; set; }
         [Display(Name = "Created")]
         public DateTimeOffset CreatedUtc { get; set; }
         [Display(Name = "Modified")]
-        public DateTimeOffset? ModifiedUtc { get; set; }
 
+        public DateTimeOffset? ModifiedUtc { get; set; }
     }
 }

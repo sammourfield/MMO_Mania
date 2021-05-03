@@ -10,7 +10,7 @@ namespace MMO_Mania.Data
     public class Games
     {
         [Key]
-        public int GameId { get; set; }
+        public Game? GameTitle { get; set; }
         
         [Required]
         public string Desc { get; set; }

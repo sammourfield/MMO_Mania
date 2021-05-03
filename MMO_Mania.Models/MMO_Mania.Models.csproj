@@ -54,11 +54,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AchievementCreate.cs" />
+    <Compile Include="AchievementDetail.cs" />
+    <Compile Include="AchievementEdit.cs" />
+    <Compile Include="AchievementListItem.cs" />
     <Compile Include="CharCreate.cs" />
     <Compile Include="CharacterDetail.cs" />
     <Compile Include="CharEdit.cs" />
     <Compile Include="CharListItem.cs" />
     <Compile Include="GameListItem.cs" />
+    <Compile Include="LeaderboardModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

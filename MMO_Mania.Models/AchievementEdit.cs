@@ -6,12 +6,11 @@ using System.Threading.Tasks;
 
 namespace MMO_Mania.Models
 {
-    public class CharEdit
+    public class AchievementEdit
     {
-        public int Char_Id { get; set; }
+        public int AchievementID { get; set; }
         public Game? GameTitle { get; set; }
         public string Char_Name { get; set; }
-        public int Level { get; set; }
-        public string Achievements { get; set; }
+        public string Achievement { get; set; }
     }
 }

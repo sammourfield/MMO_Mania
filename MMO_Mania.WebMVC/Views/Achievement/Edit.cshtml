@@ -1,30 +1,24 @@
-﻿@model MMO_Mania.Models.CharCreate
+﻿@model MMO_Mania.Models.AchievementEdit
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Edit";
 }
 
-<h1>Add New Character To Your Roster</h1>
+<h2>Edit</h2>
 
-
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-       
+        <h4>AchievementEdit</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
-            @Html.LabelFor(model => model.GameTitle, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.AchievementID, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                
-
-                @using MMO_Mania.Models
-                
-                @Html.DropDownListFor(m => m.GameTitle,
-                            new SelectList(Enum.GetValues(typeof(Game))),
-                            "Select Game")
+                @Html.EditorFor(model => model.AchievementID, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.AchievementID, "", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -33,14 +27,6 @@
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Char_Name, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Char_Name, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Level, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Level, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Level, "", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -54,7 +40,7 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Save" class="btn btn-default" />
             </div>
         </div>
     </div>
@@ -63,7 +49,3 @@
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
-
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}

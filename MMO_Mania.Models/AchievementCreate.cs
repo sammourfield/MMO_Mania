@@ -7,30 +7,19 @@ using System.Threading.Tasks;
 
 namespace MMO_Mania.Models
 {
-    public class CharCreate
+    public class AchievementCreate
     {
-        
-        //public enum Game
-        //{
-         //   WorldOfWarcraft = 1,
-         //   RuneScape,
-        //    ElderScrolls
-        //}
         [Required]
-        public Game? GameTitle{ get; set; }
+        public Game? GameTitle { get; set; }
         [Required]
-        
+
         [MinLength(2, ErrorMessage = "Please enter at least 2 characters.")]
         [MaxLength(16, ErrorMessage = "There are too many characters in this field.")]
         public string Char_Name { get; set; }
-        public int Level { get; set; }
+        
         [MaxLength(2000)]
         public string Achievement { get; set; }
     }
-    public enum Game
-    {
-        WorldOfWarcraft = 1,
-        RuneScape,
-        ElderScrolls
-    }
+ 
 }
+    

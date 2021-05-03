@@ -6,17 +6,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MMO_Mania.Data
+namespace MMO_Mania.Models
 {
-    public class Leaderboard
+    public class LeaderboardModel
     {
-        [Key]
-        public int Rank { get; set; }
-        [ForeignKey("Char_Id")]
+        
         public int Char_Id { get; set; }
+        public Game? GameTitle { get; set; }
         public string Char_Name { get; set; }
+      
         public int Level { get; set; }
         public string Achievements { get; set; }
+        [Key]
+        public int Ranking { get; set; }
     }
-    
 }

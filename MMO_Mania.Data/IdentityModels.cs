@@ -33,6 +33,7 @@ namespace MMO_Mania.Data
         }
         
         public DbSet<Character> Characters { get; set; }
+        public DbSet<Achievements> Achievements { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

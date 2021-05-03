@@ -25,8 +25,8 @@ namespace MMO_Mania.Data
         public int Level { get; set; }
         [Required]
         public string Achievements { get; set; }
-        [ForeignKey("Rank")]
-        public int Rank { get; set; }
+        
+        public int Ranking { get; set; }
         [Required]
         public DateTimeOffset CreatedUtc { get; set; }
 
