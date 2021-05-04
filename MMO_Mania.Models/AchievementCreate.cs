@@ -20,6 +20,7 @@ namespace MMO_Mania.Models
         [MaxLength(2000)]
         public string Achievement { get; set; }
     }
+
  
 }
     

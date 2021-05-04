@@ -3,23 +3,52 @@ namespace MMO_Mania.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialCreate : DbMigration
+    public partial class resettables : DbMigration
     {
         public override void Up()
         {
+            CreateTable(
+                "dbo.Achievements",
+                c => new
+                    {
+                        AchievementID = c.Int(nullable: false, identity: true),
+                        OwnerID = c.Guid(nullable: false),
+                        GameTitle = c.Int(),
+                        Char_Name = c.String(nullable: false),
+                        Achievement = c.String(nullable: false),
+                        CreatedUtc = c.DateTimeOffset(nullable: false, precision: 7),
+                        ModifiedUtc = c.DateTimeOffset(precision: 7),
+                    })
+                .PrimaryKey(t => t.AchievementID);
+            
             CreateTable(
                 "dbo.Character",
                 c => new
                     {
                         Char_Id = c.Int(nullable: false, identity: true),
                         OwnerID = c.Guid(nullable: false),
-                        Char_Name = c.String(nullable: false),
+                        GameTitle = c.Int(),
+                        Char_Name = c.String(),
                         Level = c.Int(nullable: false),
-                        Achievements = c.String(nullable: false),
+                        Achievement = c.String(),
+                        AchievementID = c.Int(nullable: false),
+                        Ranking = c.Int(nullable: false),
                         CreatedUtc = c.DateTimeOffset(nullable: false, precision: 7),
                         ModifiedUtc = c.DateTimeOffset(precision: 7),
                     })
-                .PrimaryKey(t => t.Char_Id);
+                .PrimaryKey(t => t.Char_Id)
+                .ForeignKey("dbo.Achievements", t => t.AchievementID, cascadeDelete: true)
+                .Index(t => t.AchievementID);
+            
+            CreateTable(
+                "dbo.Games",
+                c => new
+                    {
+                        GameTitle = c.Int(nullable: false),
+                        GameID = c.Guid(nullable: false),
+                        Desc = c.String(nullable: false),
+                    })
+                .PrimaryKey(t => t.GameTitle);
             
             CreateTable(
                 "dbo.IdentityRole",
@@ -99,16 +128,20 @@ namespace MMO_Mania.Data.Migrations
             DropForeignKey("dbo.IdentityUserLogin", "ApplicationUser_Id", "dbo.ApplicationUser");
             DropForeignKey("dbo.IdentityUserClaim", "ApplicationUser_Id", "dbo.ApplicationUser");
             DropForeignKey("dbo.IdentityUserRole", "IdentityRole_Id", "dbo.IdentityRole");
+            DropForeignKey("dbo.Character", "AchievementID", "dbo.Achievements");
             DropIndex("dbo.IdentityUserLogin", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserClaim", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserRole", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserRole", new[] { "IdentityRole_Id" });
+            DropIndex("dbo.Character", new[] { "AchievementID" });
             DropTable("dbo.IdentityUserLogin");
             DropTable("dbo.IdentityUserClaim");
             DropTable("dbo.ApplicationUser");
             DropTable("dbo.IdentityUserRole");
             DropTable("dbo.IdentityRole");
+            DropTable("dbo.Games");
             DropTable("dbo.Character");
+            DropTable("dbo.Achievements");
         }
     }
 }

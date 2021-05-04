@@ -56,6 +56,7 @@
   <ItemGroup>
     <Compile Include="AchievementService.cs" />
     <Compile Include="CharService.cs" />
+    <Compile Include="GameService.cs" />
     <Compile Include="LeaderboardService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

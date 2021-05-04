@@ -13,7 +13,7 @@ namespace MMO_Mania.Models
         public Game? GameTitle { get; set; }
         public string Char_Name { get; set; }
         public int Level { get; set; }
-        public string Achievements { get; set; }
+        public string Achievement { get; set; }
         [Display(Name = "Created")]
         public DateTimeOffset CreatedUtc { get; set; }
     }

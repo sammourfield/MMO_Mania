@@ -25,9 +25,11 @@
                     @if (User.Identity.IsAuthenticated)
                     {
                         <li>@Html.ActionLink("Your Characters", "Index", "Char", new { area = "" }, new { @class = "navbar-brand", style = "color: black" })</li>
+                        <li>@Html.ActionLink("Your Achievements", "Index", "Achievement", new { area = "" }, new { @class = "navbar-brand", style = "color: black" })</li>
                     }
+
                     <li>@Html.ActionLink("Leaderboard", "Ranking", "Leaderboard", new { area = "" }, new { @class = "navbar-brand", style = "color: black" })</li>
-                    
+
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>

@@ -16,7 +16,7 @@ namespace MMO_Mania.Models
         public string Char_Name { get; set; }
       
         public int Level { get; set; }
-        public string Achievements { get; set; }
+        public string Achievement { get; set; }
         [Key]
         public int Ranking { get; set; }
     }

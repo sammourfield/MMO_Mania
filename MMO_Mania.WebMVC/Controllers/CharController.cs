@@ -68,7 +68,7 @@ namespace MMO_Mania.WebMVC.Controllers
                     GameTitle = detail.GameTitle,
                     Char_Name = detail.Char_Name,
                     Level = detail.Level,
-                    Achievements = detail.Achievements
+                    Achievement = detail.Achievement
                 };
             return View(model);
         }

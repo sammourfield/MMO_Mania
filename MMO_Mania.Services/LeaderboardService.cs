@@ -29,7 +29,7 @@ namespace MMO_Mania.Services
                                     Char_Id = e.Char_Id,
                                     Char_Name = e.Char_Name,
                                     Level = e.Level,
-                                    Achievements = e.Achievements,
+                                    Achievement = e.Achievement,
                                     
                                 }
                         );

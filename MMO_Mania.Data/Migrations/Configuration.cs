@@ -10,7 +10,6 @@ namespace MMO_Mania.Data.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "MMO_Mania.Data.ApplicationDbContext";
         }
 
         protected override void Seed(MMO_Mania.Data.ApplicationDbContext context)

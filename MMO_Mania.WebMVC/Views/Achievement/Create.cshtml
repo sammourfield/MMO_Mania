@@ -13,7 +13,18 @@
     <div class="form-horizontal">
         <h4>AchievementCreate</h4>
         <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.GameTitle, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+
+
+                @using MMO_Mania.Models
+
+                @Html.DropDownListFor(m => m.GameTitle,
+                            new SelectList(Enum.GetValues(typeof(Game))),
+                            "Select Game")
+            </div>
+        </div>
         <div class="form-group">
             @Html.LabelFor(model => model.Char_Name, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">

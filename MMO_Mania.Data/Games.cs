@@ -9,6 +9,7 @@ namespace MMO_Mania.Data
 {
     public class Games
     {
+        public Guid GameID { get; set; }
         [Key]
         public Game? GameTitle { get; set; }
         

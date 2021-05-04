@@ -9,6 +9,7 @@ using System.Web.Mvc;
 
 namespace MMO_Mania.WebMVC.Controllers
 
+{
         [Authorize]
         public class AchievementController : Controller
         {

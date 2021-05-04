@@ -25,7 +25,7 @@ namespace MMO_Mania.Services
                     GameTitle = (Data.Game)model.GameTitle,
                     Char_Name = model.Char_Name,
                     Level = model.Level,
-                    Achievements = model.Achievements,
+                    Achievement = model.Achievement,
                     CreatedUtc = DateTimeOffset.Now
                 };
 
@@ -52,7 +52,7 @@ namespace MMO_Mania.Services
                                     Char_Id = e.Char_Id,
                                     Char_Name = e.Char_Name,
                                     Level = e.Level,
-                                    Achievements = e.Achievements,
+                                    Achievement = e.Achievement,
                                     CreatedUtc = e.CreatedUtc
                                 }
                         );
@@ -75,7 +75,7 @@ namespace MMO_Mania.Services
                         Char_Id = entity.Char_Id,
                         Char_Name = entity.Char_Name,
                         Level = entity.Level,
-                        Achievements = entity.Achievements,
+                        Achievement = entity.Achievement,
                         CreatedUtc = entity.CreatedUtc,
                         ModifiedUtc = entity.ModifiedUtc
                     };
@@ -93,7 +93,7 @@ namespace MMO_Mania.Services
                 entity.Char_Name = model.Char_Name;
                 entity.GameTitle = (Data.Game?)model.GameTitle;
                 entity.Level = model.Level;
-                entity.Achievements = model.Achievements;
+                entity.Achievement = model.Achievement;
                 entity.ModifiedUtc = DateTimeOffset.UtcNow;
 
                 return ctx.SaveChanges() == 1;
