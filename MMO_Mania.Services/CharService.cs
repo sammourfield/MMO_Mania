@@ -33,7 +33,7 @@ namespace MMO_Mania.Services
 
             using (var ctx = new ApplicationDbContext())
             {
-                ctx.Characters.Add(entity);
+                ctx.Character.Add(entity);
                 return ctx.SaveChanges() == 1;
             }
         }
@@ -43,7 +43,7 @@ namespace MMO_Mania.Services
             {
                 var query =
                     ctx
-                        .Characters
+                        .Character
                         .Where(e => e.OwnerID == _userId)
                         .Select(
                             e =>
@@ -69,7 +69,7 @@ namespace MMO_Mania.Services
             {
                 var entity =
                     ctx
-                        .Characters
+                        .Character
                         .Single(e => e.Char_Id == id && e.OwnerID == _userId);
                 return
                     new CharacterDetail
@@ -90,7 +90,7 @@ namespace MMO_Mania.Services
             {
                 var entity =
                     ctx
-                        .Characters
+                        .Character
                         .Single(e => e.Char_Id == model.Char_Id && e.OwnerID == _userId);
 
                 entity.Char_Name = model.Char_Name;
@@ -109,10 +109,10 @@ namespace MMO_Mania.Services
             {
                 var entity =
                     ctx
-                        .Characters
+                        .Character
                         .Single(e => e.Char_Id == noteId && e.OwnerID == _userId);
 
-                ctx.Characters.Remove(entity);
+                ctx.Character.Remove(entity);
 
                 return ctx.SaveChanges() == 1;
             }

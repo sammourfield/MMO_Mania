@@ -15,10 +15,7 @@ namespace MMO_Mania.Models
 
         [Required]
         public string Desc { get; set; }
-
-        
-
-
+        public int GameID { get; set; }
     }
    
 }

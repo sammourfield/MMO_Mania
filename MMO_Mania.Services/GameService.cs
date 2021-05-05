@@ -30,7 +30,7 @@ namespace MMO_Mania.Services
                                 e =>
                                     new GameListItem
                                     {
-
+                                        GameID = e.GameID,
                                         GameName = e.GameName,
                                         Desc = e.Desc,
                                     }

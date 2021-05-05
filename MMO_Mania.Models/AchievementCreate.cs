@@ -11,8 +11,9 @@ namespace MMO_Mania.Models
     {
         [Required]
         public int Char_Id { get; set; }
-        public int GameID { get; set; }
         [Required]
+        public int GameID { get; set; }
+     
 
         [MinLength(2, ErrorMessage = "Please enter at least 2 characters.")]
         [MaxLength(16, ErrorMessage = "There are too many characters in this field.")]

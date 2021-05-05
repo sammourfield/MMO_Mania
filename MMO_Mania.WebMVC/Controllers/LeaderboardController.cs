@@ -12,23 +12,33 @@ namespace MMO_Mania.WebMVC.Controllers
 {
     public class LeaderboardController : Controller
     {
+        private ApplicationDbContext _db = new ApplicationDbContext();
         // GET: Leaderboard
-       
+
         public ActionResult Ranking()
         {
-            
-            List<Character> characters = new List<Character>();
+            var chars = _db.Set<Character>().ToList();
+            List<LeaderboardModel> charactersWithRank = new List<LeaderboardModel>();
 
-            var result = characters.OrderByDescending(c => c.Level)
+
+
+            var result = chars.OrderByDescending(c => c.Level)
                 .Select((c, index) => new LeaderboardModel
                 {
                     Char_Id = c.Char_Id,
                     
                     Char_Name = c.Char_Name,
-                    Level = c.Level,
-                    //Ranking = index < 5 ? "1" : index < 10 ? "2" : index < 15 ? "3" : "4" //based on the index to set ranking
-                }); ;
-            return View(result);
+                    Level = c.Level
+                });
+            var rank = 1;
+            foreach(var res in result)
+            {
+                res.Ranking = rank;
+                charactersWithRank.Add(res);
+                rank++;
+            }
+           
+            return View(charactersWithRank);
         }
     }
 }

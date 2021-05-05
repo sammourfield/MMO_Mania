@@ -17,7 +17,7 @@ using System.Threading.Tasks;
             {
                 var query =
                     ctx
-                        .Characters
+                        .Character
                         .Where(e => e.OwnerID == _userId)
                         .Select(
                             e =>
