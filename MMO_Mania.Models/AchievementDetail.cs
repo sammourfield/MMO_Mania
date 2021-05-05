@@ -10,9 +10,11 @@ namespace MMO_Mania.Models
      public class AchievementDetail
     {
         public int AchievementID { get; set; }
-        public Game? GameTitle { get; set; }
-        
-       
+        //public Game? GameTitle { get; set; }
+        public int Char_Id { get; set; }
+        public string GameName { get; set; }
+
+
         public string Char_Name { get; set; }
         
         public string Achievement { get; set; }

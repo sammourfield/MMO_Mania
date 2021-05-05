@@ -10,7 +10,8 @@ namespace MMO_Mania.Models
     public class AchievementCreate
     {
         [Required]
-        public Game? GameTitle { get; set; }
+        public int Char_Id { get; set; }
+        public int GameID { get; set; }
         [Required]
 
         [MinLength(2, ErrorMessage = "Please enter at least 2 characters.")]

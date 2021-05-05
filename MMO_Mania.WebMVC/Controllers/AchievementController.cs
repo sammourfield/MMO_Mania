@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNet.Identity;
+using MMO_Mania.Data;
 using MMO_Mania.Models;
 using MMO_Mania.Services;
 using System;
@@ -13,6 +14,8 @@ namespace MMO_Mania.WebMVC.Controllers
         [Authorize]
         public class AchievementController : Controller
         {
+         private ApplicationDbContext _db = new ApplicationDbContext();
+        
 
             public ActionResult Index()
             {
@@ -22,16 +25,23 @@ namespace MMO_Mania.WebMVC.Controllers
 
                 return View(model);
             }
-            //GET CHAR
-            public ActionResult Create()
-            {
-                return View();
-            }
-            [HttpPost]
+        //GET ACHIEVE
+        public ActionResult Create()
+        {
+            var games = new SelectList(_db.Games.ToList(), "GameID", "GameName");
+            ViewBag.Games = games;
+            return View();
+        }
+        [HttpPost]
             [ValidateAntiForgeryToken]
             public ActionResult Create(AchievementCreate model)
             {
-                if (!ModelState.IsValid) return View(model);
+            Games games = _db.Games.Find(model.GameID);
+            if (games == null)
+            {
+                return HttpNotFound("Game not found");
+            }
+            if (!ModelState.IsValid) return View(model);
 
                 var service = CreateAchieveService();
 
@@ -66,7 +76,7 @@ namespace MMO_Mania.WebMVC.Controllers
                     new AchievementEdit
                     {
                         AchievementID = detail.AchievementID,
-                        GameTitle = detail.GameTitle,
+                        GameName = detail.GameName,
                         Char_Name = detail.Char_Name,
                         Achievement = detail.Achievement
                     };

@@ -116,7 +116,7 @@ footer {
 
 .flip-card-back {
     
-    background-color: wheat;
+    background-color: cadetblue;
     color: black;
     transform: rotateY(180deg);
     padding-bottom:350px;
@@ -180,7 +180,7 @@ dt{
     color:blue;
 }
  h3{
-     color:Black;
+     color:white;
  }
  p{
      color:black;

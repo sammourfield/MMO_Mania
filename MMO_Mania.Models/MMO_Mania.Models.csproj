@@ -63,6 +63,7 @@
     <Compile Include="CharEdit.cs" />
     <Compile Include="CharListItem.cs" />
     <Compile Include="GameCreate.cs" />
+    <Compile Include="GameDetail.cs" />
     <Compile Include="GameListItem.cs" />
     <Compile Include="LeaderboardModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

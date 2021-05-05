@@ -68,13 +68,17 @@ namespace MMO_Mania.WebMVC.Controllers
         }
         public ActionResult Edit(int id)
         {
+            var games = new SelectList(_db.Games.ToList(), "GameID", "GameName");
+            ViewBag.Games = games;
+            
+
             var service = CreateCharService();
             var detail = service.GetCharacterById(id);
             var model =
                 new CharEdit
                 {
                     Char_Id = detail.Char_Id,
-                    GameTitle = detail.GameTitle,
+                    GameID = detail.GameID,
                     Char_Name = detail.Char_Name,
                     Level = detail.Level,
                     Achievement = detail.Achievement

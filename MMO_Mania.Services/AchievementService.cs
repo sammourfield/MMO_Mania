@@ -23,6 +23,8 @@ namespace MMO_Mania.Services
                 {
                     OwnerID = _userId,
                     //GameTitle = (Data.Game)model.GameTitle,
+                    Char_Id = model.Char_Id,
+                    GameID = model.GameID,
                     Char_Name = model.Char_Name,
                     Achievement = model.Achievement,
                     CreatedUtc = DateTimeOffset.Now
@@ -48,7 +50,9 @@ namespace MMO_Mania.Services
                                 {
 
                                     //GameTitle = (Models.Game)e.GameTitle,
+                                    Char_Id = e.Char_Id,
                                     AchievementID = e.AchievementID,
+                                    GameID = e.GameID,
                                     Char_Name = e.Char_Name,
                                     Achievement = e.Achievement,
                                     CreatedUtc = e.CreatedUtc
@@ -70,6 +74,7 @@ namespace MMO_Mania.Services
                     new AchievementDetail
                     {
                         //GameTitle = (Models.Game)entity.GameTitle,
+                        Char_Id = entity.Char_Id,
                         AchievementID = entity.AchievementID,
                         Char_Name = entity.Char_Name,
                         Achievement = entity.Achievement,

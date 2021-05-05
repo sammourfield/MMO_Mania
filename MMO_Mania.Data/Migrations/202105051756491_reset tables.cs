@@ -3,7 +3,7 @@ namespace MMO_Mania.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class game : DbMigration
+    public partial class resettables : DbMigration
     {
         public override void Up()
         {
@@ -13,12 +13,16 @@ namespace MMO_Mania.Data.Migrations
                     {
                         AchievementID = c.Int(nullable: false, identity: true),
                         OwnerID = c.Guid(nullable: false),
+                        Char_Id = c.Int(nullable: false),
                         Char_Name = c.String(nullable: false),
+                        GameID = c.Int(nullable: false),
                         Achievement = c.String(nullable: false),
                         CreatedUtc = c.DateTimeOffset(nullable: false, precision: 7),
                         ModifiedUtc = c.DateTimeOffset(precision: 7),
                     })
-                .PrimaryKey(t => t.AchievementID);
+                .PrimaryKey(t => t.AchievementID)
+                .ForeignKey("dbo.Character", t => t.Char_Id, cascadeDelete: true)
+                .Index(t => t.Char_Id);
             
             CreateTable(
                 "dbo.Character",
@@ -125,12 +129,14 @@ namespace MMO_Mania.Data.Migrations
             DropForeignKey("dbo.IdentityUserLogin", "ApplicationUser_Id", "dbo.ApplicationUser");
             DropForeignKey("dbo.IdentityUserClaim", "ApplicationUser_Id", "dbo.ApplicationUser");
             DropForeignKey("dbo.IdentityUserRole", "IdentityRole_Id", "dbo.IdentityRole");
+            DropForeignKey("dbo.Achievements", "Char_Id", "dbo.Character");
             DropForeignKey("dbo.Character", "GameID", "dbo.Games");
             DropIndex("dbo.IdentityUserLogin", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserClaim", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserRole", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserRole", new[] { "IdentityRole_Id" });
             DropIndex("dbo.Character", new[] { "GameID" });
+            DropIndex("dbo.Achievements", new[] { "Char_Id" });
             DropTable("dbo.IdentityUserLogin");
             DropTable("dbo.IdentityUserClaim");
             DropTable("dbo.ApplicationUser");

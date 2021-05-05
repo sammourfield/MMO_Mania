@@ -56,5 +56,24 @@ namespace MMO_Mania.Services
                 return ctx.SaveChanges() == 1;
             }
         }
+        public GameDetail GetGameByID(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Games
+                        .Single(e => e.GameID == id);
+                return
+                    new GameDetail
+                    {
+                        //GameTitle = (Models.Game)entity.GameTitle,
+                        GameID = entity.GameID,
+                        GameName = entity.GameName,
+                        Desc = entity.Desc,
+                        
+                    };
+            }
+        }
     }
 }
