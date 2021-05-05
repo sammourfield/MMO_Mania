@@ -11,7 +11,7 @@ namespace MMO_Mania.Data
     {
         [Required]
         public Guid OwnerID { get; set; }
-        public Game? GameTitle { get; set; }
+        //public Game? GameTitle { get; set; }
         [Key]
         public int AchievementID { get; set; }
         [Required]

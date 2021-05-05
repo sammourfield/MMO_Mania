@@ -22,7 +22,7 @@ namespace MMO_Mania.Services
                 new Achievements()
                 {
                     OwnerID = _userId,
-                    GameTitle = (Data.Game)model.GameTitle,
+                    //GameTitle = (Data.Game)model.GameTitle,
                     Char_Name = model.Char_Name,
                     Achievement = model.Achievement,
                     CreatedUtc = DateTimeOffset.Now
@@ -47,7 +47,7 @@ namespace MMO_Mania.Services
                                 new AchievementListItem
                                 {
 
-                                    GameTitle = (Models.Game)e.GameTitle,
+                                    //GameTitle = (Models.Game)e.GameTitle,
                                     AchievementID = e.AchievementID,
                                     Char_Name = e.Char_Name,
                                     Achievement = e.Achievement,
@@ -69,7 +69,7 @@ namespace MMO_Mania.Services
                 return
                     new AchievementDetail
                     {
-                        GameTitle = (Models.Game)entity.GameTitle,
+                        //GameTitle = (Models.Game)entity.GameTitle,
                         AchievementID = entity.AchievementID,
                         Char_Name = entity.Char_Name,
                         Achievement = entity.Achievement,
@@ -88,7 +88,7 @@ namespace MMO_Mania.Services
                         .Single(e => e.AchievementID == model.AchievementID && e.OwnerID == _userId);
 
                 entity.Char_Name = model.Char_Name;
-                entity.GameTitle = (Data.Game?)model.GameTitle;
+                //entity.GameTitle = (Data.Game?)model.GameTitle;
                 entity.Achievement = model.Achievement;
                 entity.ModifiedUtc = DateTimeOffset.UtcNow;
 

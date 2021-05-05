@@ -5,19 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MMO_Mania.Data
+namespace MMO_Mania.Models
 {
-    public class Games
+    public class GameCreate
     {
-        [Key]
-        public int GameID { get; set; }
         
         public string GameName { get; set; }
-        
         [Required]
         public string Desc { get; set; }
-
-
     }
- 
 }

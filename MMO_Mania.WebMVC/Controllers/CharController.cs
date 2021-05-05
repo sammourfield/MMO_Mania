@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNet.Identity;
+using MMO_Mania.Data;
 using MMO_Mania.Models;
 using MMO_Mania.Services;
 using System;
@@ -12,6 +13,7 @@ namespace MMO_Mania.WebMVC.Controllers
     [Authorize]
     public class CharController : Controller
     {
+        private ApplicationDbContext _db = new ApplicationDbContext();
         
         public ActionResult Index()
         {
@@ -24,12 +26,19 @@ namespace MMO_Mania.WebMVC.Controllers
         //GET CHAR
         public ActionResult Create()
         {
+            var games = new SelectList(_db.Games.ToList(), "GameID", "GameName");
+            ViewBag.Games = games;
             return View();
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(CharCreate model)
         {
+            Games games = _db.Games.Find(model.GameID);
+            if (games == null)
+            {
+                return HttpNotFound("Game not found");
+            }
             if (!ModelState.IsValid) return View(model);
 
             var service = CreateCharService();

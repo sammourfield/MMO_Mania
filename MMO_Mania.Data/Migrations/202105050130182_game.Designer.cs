@@ -7,13 +7,13 @@ namespace MMO_Mania.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class resettables : IMigrationMetadata
+    public sealed partial class game : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(resettables));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(game));
         
         string IMigrationMetadata.Id
         {
-            get { return "202105042159495_reset tables"; }
+            get { return "202105050130182_game"; }
         }
         
         string IMigrationMetadata.Source

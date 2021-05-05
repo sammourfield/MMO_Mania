@@ -22,10 +22,12 @@ namespace MMO_Mania.Services
                 new Character()
                 {
                     OwnerID = _userId,
-                    GameTitle = (Data.Game)model.GameTitle,
+                    GameID = model.GameID,
+                    //GameTitle = (Data.Game)model.GameTitle,
                     Char_Name = model.Char_Name,
                     Level = model.Level,
                     Achievement = model.Achievement,
+                    
                     CreatedUtc = DateTimeOffset.Now
                 };
 
@@ -48,7 +50,8 @@ namespace MMO_Mania.Services
                                 new CharListItem
                                 {
 
-                                    GameTitle = (Models.Game)e.GameTitle,
+                                    //GameTitle = (Models.Game)e.GameTitle,
+                                    GameID = e.GameID,
                                     Char_Id = e.Char_Id,
                                     Char_Name = e.Char_Name,
                                     Level = e.Level,
@@ -71,7 +74,7 @@ namespace MMO_Mania.Services
                 return
                     new CharacterDetail
                     {
-                        GameTitle = (Models.Game)entity.GameTitle,
+                        //GameTitle = (Models.Game)entity.GameTitle,
                         Char_Id = entity.Char_Id,
                         Char_Name = entity.Char_Name,
                         Level = entity.Level,
@@ -91,7 +94,7 @@ namespace MMO_Mania.Services
                         .Single(e => e.Char_Id == model.Char_Id && e.OwnerID == _userId);
 
                 entity.Char_Name = model.Char_Name;
-                entity.GameTitle = (Data.Game?)model.GameTitle;
+                //entity.GameTitle = (Data.Game?)model.GameTitle;
                 entity.Level = model.Level;
                 entity.Achievement = model.Achievement;
                 entity.ModifiedUtc = DateTimeOffset.UtcNow;

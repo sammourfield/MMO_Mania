@@ -58,9 +58,9 @@
     <Compile Include="Character.cs" />
     <Compile Include="Games.cs" />
     <Compile Include="IdentityModels.cs" />
-    <Compile Include="Migrations\202105042159495_reset tables.cs" />
-    <Compile Include="Migrations\202105042159495_reset tables.Designer.cs">
-      <DependentUpon>202105042159495_reset tables.cs</DependentUpon>
+    <Compile Include="Migrations\202105050130182_game.cs" />
+    <Compile Include="Migrations\202105050130182_game.Designer.cs">
+      <DependentUpon>202105050130182_game.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -76,8 +76,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202105042159495_reset tables.resx">
-      <DependentUpon>202105042159495_reset tables.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202105050130182_game.resx">
+      <DependentUpon>202105050130182_game.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

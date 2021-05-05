@@ -11,7 +11,7 @@ namespace MMO_Mania.Models
     {  
 
         [Key]
-        public Game? GameTitle { get; set; }
+        public string GameName { get; set; }
 
         [Required]
         public string Desc { get; set; }

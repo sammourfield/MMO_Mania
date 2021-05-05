@@ -11,9 +11,9 @@ namespace MMO_Mania.Services
 
     public class GameService
         {
-            private readonly Guid _gameID;
+            private readonly int _gameID;
 
-            public GameService(Guid GameID)
+            public GameService(int GameID)
             {
                 _gameID = GameID;
             }
@@ -31,7 +31,7 @@ namespace MMO_Mania.Services
                                     new GameListItem
                                     {
 
-                                        GameTitle = (Models.Game)e.GameTitle,
+                                        GameName = e.GameName,
                                         Desc = e.Desc,
                                     }
                             );
@@ -39,5 +39,22 @@ namespace MMO_Mania.Services
                     return query.ToArray();
                 }
             }
+        public bool CreateGame(GameCreate model)
+        {
+            var entity =
+                new Games()
+                {
+                    GameID = _gameID,
+                    GameName = model.GameName,
+                    
+                    
+                };
+
+            using (var ctx = new ApplicationDbContext())
+            {
+                ctx.Games.Add(entity);
+                return ctx.SaveChanges() == 1;
+            }
         }
+    }
 }

@@ -16,30 +16,33 @@ namespace MMO_Mania.Data
 
         [Required]
         public Guid OwnerID { get; set; }
+        [ForeignKey("Games")]
+        public int GameID { get; set; }
+        public virtual Games Games { get; set; }
 
-        
-        
-        public Game? GameTitle { get; set; }
+
+
+        //public Game? GameTitle { get; set; }
         public string Char_Name { get; set; }
         [Required]
 
         public int Level { get; set; }
         public string Achievement { get; set; }
-        [Required]
-        [ForeignKey("Achievements")]
-        public int AchievementID { get; set; }
-        public virtual Achievements Achievements { get; set; }
+        
+        //[ForeignKey("Achievements")]
+        //public int AchievementID { get; set; }
+        //public virtual Achievements Achievements { get; set; }
 
-        public int Ranking { get; set; }
+        
         [Required]
         public DateTimeOffset CreatedUtc { get; set; }
 
         public DateTimeOffset? ModifiedUtc { get; set; }
     }
-    public enum Game
+    /*public enum Game
     {
-        WorldOfWarcraft = 1,
+        WorldOfWarcraft = 2,
         RuneScape,
         ElderScrolls
-    }
+    }*/
 }

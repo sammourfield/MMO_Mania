@@ -6,8 +6,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MMO_Mania.Services
-{
+//namespace MMO_Mania.Services
+/*{
    public  class LeaderboardService
     {
         private readonly Guid _userId;
@@ -24,8 +24,8 @@ namespace MMO_Mania.Services
                                 new LeaderboardModel
                                 {
 
-                                    Ranking = e.Ranking,
-                                    GameTitle = (Models.Game)e.GameTitle,
+                                    
+                                    //GameTitle = (Models.Game)e.GameTitle,
                                     Char_Id = e.Char_Id,
                                     Char_Name = e.Char_Name,
                                     Level = e.Level,
@@ -39,3 +39,4 @@ namespace MMO_Mania.Services
         }
     }
 }
+*/
