@@ -24,8 +24,11 @@
         <th>
             @Html.DisplayNameFor(model => model.Char_Id)
         </th>
-        <th>
+        @*<th>
             @Html.DisplayNameFor(model => model.GameID)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.Games.GameName)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Char_Name)
@@ -44,32 +47,35 @@
 
     @foreach (var item in Model)
     {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Char_Id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.GameID)
-            </td>
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Char_Id)
+    </td>
+    @*<td>
+        @Html.DisplayFor(modelItem => item.GameID)
+    </td>*@
+    <td>
+        @Html.DisplayFor(modelItem => item.Games.GameName)
+    </td>
 
-            <td>
-                @Html.DisplayFor(modelItem => item.Char_Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Level)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Achievement)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CreatedUtc)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.Char_Id }) |
-                @Html.ActionLink("Details", "Details", new { id = item.Char_Id }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.Char_Id })
-            </td>
-        </tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Char_Name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Level)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Achievement)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CreatedUtc)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.Char_Id }) |
+        @Html.ActionLink("Details", "Details", new { id = item.Char_Id }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.Char_Id })
+    </td>
+</tr>
     }
 
 </table>

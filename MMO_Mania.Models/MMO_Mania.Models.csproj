@@ -72,5 +72,11 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MMO_Mania.Data\MMO_Mania.Data.csproj">
+      <Project>{d0322820-ca64-4831-9c6b-7f02caf429f3}</Project>
+      <Name>MMO_Mania.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

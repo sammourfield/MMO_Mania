@@ -23,7 +23,7 @@ namespace MMO_Mania.Services
                 {
                     OwnerID = _userId,
                     GameID = model.GameID,
-                    //GameTitle = (Data.Game)model.GameTitle,
+                    GameName = model.GameName,
                     Char_Name = model.Char_Name,
                     Level = model.Level,
                     Achievement = model.Achievement,
@@ -52,6 +52,8 @@ namespace MMO_Mania.Services
 
                                     //GameTitle = (Models.Game)e.GameTitle,
                                     GameID = e.GameID,
+                                    Games = e.Games,
+                                    //GameName = e.GameName,
                                     Char_Id = e.Char_Id,
                                     Char_Name = e.Char_Name,
                                     Level = e.Level,

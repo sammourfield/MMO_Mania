@@ -84,13 +84,14 @@ namespace MMO_Mania.WebMVC.Controllers
 
         public ActionResult Edit(int id)
         {
+            Create();
             var service = CreateAchieveService();
             var detail = service.GetAchieveById(id);
             var model =
                 new AchievementEdit
                 {
                     AchievementID = detail.AchievementID,
-                    GameName = detail.GameName,
+                    GameID = detail.GameID,
                     Char_Name = detail.Char_Name,
                     Achievement = detail.Achievement
                 };

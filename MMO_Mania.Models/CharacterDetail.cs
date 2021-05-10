@@ -12,6 +12,7 @@ namespace MMO_Mania.Models
         public int Char_Id { get; set; }
         //public  Game? GameTitle { get; set; }
         public int GameID { get; set; }
+        public string GameName { get; set; }
         public string Char_Name { get; set; }
         public int Level { get; set; }
         public string Achievement { get; set; }

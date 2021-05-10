@@ -62,6 +62,10 @@
     <Compile Include="Migrations\202105051756491_reset tables.Designer.cs">
       <DependentUpon>202105051756491_reset tables.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202105061810453_Game Name.cs" />
+    <Compile Include="Migrations\202105061810453_Game Name.Designer.cs">
+      <DependentUpon>202105061810453_Game Name.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -70,14 +74,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\MMO_Mania.Models\MMO_Mania.Models.csproj">
-      <Project>{92EA4179-CE92-4263-BEBC-D9097B09AD7F}</Project>
-      <Name>MMO_Mania.Models</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="Migrations\202105051756491_reset tables.resx">
       <DependentUpon>202105051756491_reset tables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105061810453_Game Name.resx">
+      <DependentUpon>202105061810453_Game Name.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

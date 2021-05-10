@@ -20,6 +20,7 @@ namespace MMO_Mania.WebMVC.Controllers
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new CharService(userId);
             var model = service.GetCharacters();
+           
 
             return View(model);
         }
@@ -79,6 +80,7 @@ namespace MMO_Mania.WebMVC.Controllers
                 {
                     Char_Id = detail.Char_Id,
                     GameID = detail.GameID,
+                    GameName = detail.GameName,
                     Char_Name = detail.Char_Name,
                     Level = detail.Level,
                     Achievement = detail.Achievement

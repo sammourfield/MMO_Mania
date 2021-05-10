@@ -10,18 +10,14 @@
 
 <table class="table">
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Char_Id)
-        </th>
+      
         <th>
             @Html.DisplayNameFor(model => model.Char_Name)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Level)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Achievement)
-        </th>
+        
         <th>
             @Html.DisplayNameFor(model => model.Ranking)
         </th>
@@ -30,26 +26,18 @@
 
 @foreach (var item in Model) {
     <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Char_Id)
-        </td>
+      
         <td>
             @Html.DisplayFor(modelItem => item.Char_Name)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Level)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Achievement)
-        </td>
+        
         <td>
             @Html.DisplayFor(modelItem => item.Ranking)
         </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-        </td>
+     
     </tr>
 }
 

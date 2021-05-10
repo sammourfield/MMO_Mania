@@ -1,5 +1,4 @@
-﻿using MMO_Mania.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -19,6 +18,7 @@ namespace MMO_Mania.Data
         [ForeignKey("Games")]
         public int GameID { get; set; }
         public virtual Games Games { get; set; }
+        public string GameName { get; set; }
 
 
 

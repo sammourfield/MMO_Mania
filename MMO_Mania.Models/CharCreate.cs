@@ -19,6 +19,7 @@ namespace MMO_Mania.Models
         //[Required]
         //public Game? GameTitle{ get; set; }
         public int GameID { get; set; }
+        public string GameName { get; set; }
         [Required]
         
         [MinLength(2, ErrorMessage = "Please enter at least 2 characters.")]
